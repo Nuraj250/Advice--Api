@@ -18,11 +18,14 @@ export class AdviceComponent {
   adviceList: any = [];
   inputNumber: number = 0;
   generateAdvice: any
+  randomAdvice: any;
 
   constructor(private http: HttpClient, private adviceService: AdviceService, private activatedRoute: ActivatedRoute) {
     this.generateAdvice = activatedRoute.snapshot.data?.['advice'];
-    console.log(this.generateAdvice)
+    this.randomAdvice=this.generateAdvice.slip.advice
+    console.log(this.randomAdvice)
   }
+
 
   /**
    * used to generate  advice

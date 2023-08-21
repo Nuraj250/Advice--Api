@@ -1,9 +1,21 @@
 <div class="advice-container">
-    <h2>Get Advice</h2>
+
+  <!-- generate random id -->
+  <h2>Get Advice</h2>
+  <p class="advice">{{ randomAdvice }}</p>
+
+  <br>
+
+  <!-- generate advice by id -->
+    <h2>Get Advice By Id</h2>
     <label for="numberInput">Enter a number:</label>
     <input type="number" id="numberInput" [(ngModel)]="inputNumber" />
     <button (click)="getAdvice()">Get Advice</button>
     <p class="advice">{{ advice }}</p>
+
+<br>
+
+<!-- generate 100 advice -->
     <button (click)="get100Advices()">Get 100 Advices</button>
     <ul *ngIf="adviceList.length > 0">
       <li *ngFor="let advice of adviceList">{{ advice }}</li>
